@@ -1,0 +1,7 @@
+.screen {
+  height: 200px;
+  width: 200px;
+  border: 2px dashed red;
+  background-color: bisque;
+  margin-top: 10px;
+}

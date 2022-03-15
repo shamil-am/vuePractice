@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row">
+          <div class="col-2 offset-5">
+            <button
+              class="btn btn-primary"
+              @click="showContainer = !showContainer"
+            >
+              Change
+            </button>
+            <h1 v-if="showContainer" class="text text-success">Start tag</h1>
+            <h1 v-else class="text text-danger">End Tag</h1>
+            <hr />
+            <!-- ! else if-->
+            <div class="conditions alert" :class="bgColor">
+              <button
+                class="btn btn-secondary me-2"
+                @click="counter = counter + 1"
+              >
+                plus
+              </button>
+              <button class="btn btn-secondary" @click="counter = counter - 1">
+                minus
+              </button>
+              <h4>{{counter}}</h4>
+              <p v-if="counter == 0">Counter is zero</p>
+              <p v-else-if="counter > 0">Counter is positive</p>
+              <p v-else>Counter is negative</p>
+            </div>
+            <!-- ! show ile yazma -->
+            <hr />
+            <hr />
+            <p v-show="counter > 0">Positive show</p>
+            <p v-show="counter < 0">Negative show</p>
+            <p v-show="counter === 0">Zero show</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
