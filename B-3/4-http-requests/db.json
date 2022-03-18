@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "name": "book",
+      "created_at": "3/18/2022, 4:12:51 PM",
+      "id": 1
+    },
+    {
+      "name": "laptop",
+      "created_at": "3/18/2022, 4:14:16 PM",
+      "id": 2
+    }
+  ]
+}
