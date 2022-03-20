@@ -32,10 +32,14 @@ export default {
   methods: {
     async onSubmit() {
       // GET /posts?title=json-server&author=typicode
-      let pw = CryptoJS.HmacSHA1(this.userData.password, this.$store.getters._saltKey).toString();      
+      let pw = CryptoJS.HmacSHA1(this.userData.password, this.$store.getters._saltKey).toString();
       let response = await this.$appAxios.get(`/users?username=${this.userData.username}&password=${pw}`);
-      this.$store.commit("setUser",response.data[0])
-      this.$router.push('/')
+      if (response.data.length === 0) {
+        alert("user not found");
+        return;
+      } //user tapilmadi
+      this.$store.commit("setUser", response.data[0]);
+      this.$router.push("/");
     },
   },
 };
