@@ -15,12 +15,6 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li> -->
           <li class="nav-item">
             <router-link class="nav-link btn btn-primary text-light" :to="{ name: 'NewBookMarkPage' }">+ NEW</router-link>
           </li>
@@ -33,7 +27,8 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Operations
+              {{ this.$store.getters._getCurrentUser?.fullName }}
+              <!-- {{ this.$store.state.user?.fullName || 'Guest' }} -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">Account</a></li>
@@ -47,3 +42,6 @@
   </nav>
 </template>
 
+<script>
+export default {};
+</script>

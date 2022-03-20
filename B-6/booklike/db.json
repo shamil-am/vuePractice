@@ -1,19 +1,36 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "fullName": "test",
+      "username": "test",
+      "password": "123"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "fullName": "Shamil Mammadov",
+      "username": "samo",
+      "password": "U2FsdGVkX18Uxrf9+4K2qrIYSBk2ha0Wlr8T5ODawj8=",
+      "id": 2
+    },
+    {
+      "fullName": "Emil Mammadov",
+      "username": "emis",
+      "password": "U2FsdGVkX190DFC5517BN7FU64AJQ+mnTpBdRlAae9c=",
+      "id": 3
+    },
+    {
+      "fullName": "aga",
+      "username": "aga",
+      "password": "U2FsdGVkX18RVeUsguCJya93/bUH3c/rBfRgmQQpGeo=",
+      "id": 4
+    },
+    {
+      "fullName": "Xezer",
+      "username": "Tosun",
+      "password": "3cf1ee34a9b2fee4f3cc7502044a2acdb2835f5c",
+      "id": 5
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "bookmarks": [],
+  "favorites": []
 }

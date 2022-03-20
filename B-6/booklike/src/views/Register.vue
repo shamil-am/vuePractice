@@ -15,13 +15,15 @@
           <input type="password" class="form-control" v-model="userData.password" />
         </div>
         <button type="submit" class="btn btn-primary mb-3" @click="onRegister">Register</button>
-        <p>Already registered?, <router-link :to="{name: 'LoginPage'}">Login!</router-link></p>
+        <p>Already registered?, <router-link :to="{ name: 'LoginPage' }">Login!</router-link></p>
+        <button class="btn btn-dark" @click="this.$router.push('/login')">go</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import CryptoJS from "crypto-js";
 export default {
   data() {
     return {
@@ -33,8 +35,21 @@ export default {
     };
   },
   methods: {
-    onRegister() {
-      console.log(this.userData);
+    async onRegister() {
+      // !get from store with getter
+      // let saltKey = "Adm!n_L0cale?26-66";
+      let ciphertext = CryptoJS.HmacSHA1(this.userData.password, this.$store.getters._saltKey).toString();
+      let response = await this.$appAxios.post("/users", { ...this.userData, password: ciphertext });
+      if (response.statusText !== "Created") {
+        alert("An error occured");
+        return;
+      }
+      this.userData = {
+        fullName: null,
+        username: null,
+        password: null,
+      };
+      this.$router.push({ name: "HomePage" });
     },
   },
 };
