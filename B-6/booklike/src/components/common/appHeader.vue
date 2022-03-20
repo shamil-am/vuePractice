@@ -33,7 +33,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#">Account</a></li>
               <li><a class="dropdown-item" href="#">Favorites</a></li>
-              <li><a class="dropdown-item" href="#">-> Logout</a></li>
+              <li><a class="dropdown-item" @click="onLogout">-> Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -43,5 +43,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    onLogout() {
+      let response = confirm("Are u sure?");
+      if (!response) return;
+      this.$store.commit("logoutUser");
+      // !after logout go to login page
+      this.$router.push({ name: "LoginPage" });
+    },
+  },
+};
 </script>

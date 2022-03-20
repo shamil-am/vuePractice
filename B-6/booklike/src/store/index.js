@@ -1,5 +1,7 @@
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
+import SecureLS from "secure-ls";
+var ls = new SecureLS({ isCompression: false });
 
 const store = createStore({
   state() {
@@ -12,6 +14,9 @@ const store = createStore({
     setUser(state, user) {
       state.user = user;
     },
+    logoutUser(state) {
+      state.user = null;
+    },
   },
   getters: {
     _isAuthenticated: (state) => state.user !== null,
@@ -22,7 +27,18 @@ const store = createStore({
     },
     _saltKey: (state) => state.saltKey,
   },
-  plugins: [createPersistedState()],
+  // !unsecured form in storage
+  // plugins: [createPersistedState({key: 'currentUser'})],
+  plugins: [
+    createPersistedState({
+      key: "currentPerson",
+      storage: {
+        getItem: (key) => ls.get(key),
+        setItem: (key, value) => ls.set(key, value),
+        removeItem: (key) => ls.remove(key),
+      },
+    }),
+  ],
 });
 
 export default store;

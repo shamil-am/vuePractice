@@ -2,8 +2,8 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-6 col-lg-4">
       <form class="border border-secondary rounded-3 p-5 mt-5">
-          <div class="mb-3">
-          <h3>-- Add new -- </h3>
+        <div class="mb-3">
+          <h3>-- Add new --</h3>
         </div>
         <div class="mb-3">
           <label class="form-label">Header</label>
@@ -26,7 +26,8 @@
           <label for="floatingTextarea2">Comments</label>
         </div>
         <div class="mb-3">
-          <button type="reset" class="btn btn-warning me-1">Cancel</button>
+          <!--go 1 page back while cancel -->
+          <button type="reset" class="btn btn-warning me-1" @click="this.$router.go(-1)">Cancel</button>
           <button type="submit" class="btn btn-success ms-1">Save</button>
         </div>
       </form>

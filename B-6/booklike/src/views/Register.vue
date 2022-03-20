@@ -16,7 +16,6 @@
         </div>
         <button type="submit" class="btn btn-primary mb-3" @click="onRegister">Register</button>
         <p>Already registered?, <router-link :to="{ name: 'LoginPage' }">Login!</router-link></p>
-        <button class="btn btn-dark" @click="this.$router.push('/login')">go</button>
       </form>
     </div>
   </div>

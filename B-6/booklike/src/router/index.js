@@ -4,7 +4,7 @@ const routes = [
   {
     name: "HomePage",
     path: "/",
-    component: ()=>import("../views/Home.vue"),
+    component: () => import("../views/Home.vue"),
   },
   {
     name: "LoginPage",
@@ -26,6 +26,12 @@ const routes = [
 const router = createRouter({
   routes: routes,
   history: createWebHashHistory(),
+});
+
+router.beforeEach((to, from, next) => {
+  console.log("from", from);
+  console.log("to", to);
+  next();
 });
 
 export default router;
