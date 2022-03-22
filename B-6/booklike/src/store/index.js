@@ -3,6 +3,7 @@ import createPersistedState from "vuex-persistedstate";
 import SecureLS from "secure-ls";
 var ls = new SecureLS({ isCompression: false });
 
+
 const store = createStore({
   state() {
     return {

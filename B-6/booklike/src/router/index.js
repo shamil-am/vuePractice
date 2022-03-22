@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-
+// control login or not from stores
+import store from "../store";
 const routes = [
   {
     name: "HomePage",
@@ -28,9 +29,14 @@ const router = createRouter({
   history: createWebHashHistory(),
 });
 
-router.beforeEach((to, from, next) => {
-  console.log("from", from);
-  console.log("to", to);
+router.beforeEach((to, _, next) => {
+  const authRequiredRoutes = ["HomePage"];
+  let isAuthenticated = store.getters._isAuthenticated;
+  if (to.name === "LoginPage" && isAuthenticated) next(false);
+  if (authRequiredRoutes.indexOf(to.name) > -1 && !isAuthenticated) {
+    alert("Login first");
+    next({ name: "LoginPage" });
+  }
   next();
 });
 
