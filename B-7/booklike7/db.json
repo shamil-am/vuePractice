@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "test",
+      "username": "test",
+      "password": "123"
+    },
+    {
+      "fullName": "Shamil Mammadov",
+      "username": "samo",
+      "password": "U2FsdGVkX18Uxrf9+4K2qrIYSBk2ha0Wlr8T5ODawj8=",
+      "id": 2
+    },
+    {
+      "fullName": "Emil Mammadov",
+      "username": "emis",
+      "password": "U2FsdGVkX190DFC5517BN7FU64AJQ+mnTpBdRlAae9c=",
+      "id": 3
+    },
+    {
+      "fullName": "aga",
+      "username": "aga",
+      "password": "U2FsdGVkX18RVeUsguCJya93/bUH3c/rBfRgmQQpGeo=",
+      "id": 4
+    },
+    {
+      "fullName": "Xezer",
+      "username": "Tosun",
+      "password": "3cf1ee34a9b2fee4f3cc7502044a2acdb2835f5c",
+      "id": 5
+    },
+    {
+      "fullName": "Shamil Mammadov",
+      "username": "samilm",
+      "password": "3cf1ee34a9b2fee4f3cc7502044a2acdb2835f5c",
+      "id": 6
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "react"
+    },
+    {
+      "id": 2,
+      "name": "vue"
+    },
+    {
+      "id": 3,
+      "name": "angular"
+    },
+    {
+      "id": 4,
+      "name": "nextjs"
+    }
+  ],
+  "bookmarks": [
+    {
+      "user_id": 6,
+      "created_at": 1647946464591,
+      "title": "Vuejs",
+      "url": "vue.org",
+      "category_id": 2,
+      "description": "vue so cool",
+      "id": 1
+    },
+    {
+      "user_id": 6,
+      "created_at": 1647946555695,
+      "title": "Reactjs",
+      "url": "react.org",
+      "category_id": 1,
+      "description": "react better",
+      "id": 2
+    },
+    {
+      "user_id": 6,
+      "created_at": 1647948195101,
+      "title": "Test title",
+      "url": "facebook.com",
+      "category_id": 3,
+      "description": "angular is bad",
+      "id": 3
+    }
+  ],
+  "favorites": []
+}
