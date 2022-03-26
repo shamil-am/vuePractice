@@ -24,8 +24,7 @@ const sumPrice = computed(() => {
   let allSum = midSum + midSum * 0.18;
   return {
     midSum,
-    allSum: allSum,
+    allSum: allSum.toFixed(2),
   };
 });
-console.log(items);
 </script>

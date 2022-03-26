@@ -10,18 +10,30 @@
       justify-center
     "
   >
-    <Sidebar :invoiceList="invoiceList"/>
-    <InvoiceContent :onSaveInvoice="onSaveInvoice" />
+    <Sidebar :invoiceList="invoiceList" @edit-invoice="editThisInvoice" />
+    <InvoiceContent
+      :onSaveInvoice="onSaveInvoice"
+      :editingInvoice="editingInvoice"
+    />
   </div>
 </template>
 
 <script setup>
 import Sidebar from "./components/appSidebar.vue";
 import InvoiceContent from "./components/InvoiceContent.vue";
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 const invoiceList = ref([]);
+const editingInvoice = reactive({
+  current: null,
+});
 const onSaveInvoice = (invoice) => {
   invoiceList.value.push(invoice);
-  // console.log("saved",{...invoice});
+  alert("Saved");
+};
+const editThisInvoice = (invoice) => {
+  editingInvoice.current = invoice;
+  // setTimeout(() => {
+  //   editingInvoice.current = null;
+  // }, 2000);
 };
 </script>

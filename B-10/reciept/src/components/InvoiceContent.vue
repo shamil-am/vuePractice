@@ -24,7 +24,7 @@
 import InvoiceItems from "./InvoiceItems.vue";
 import Summary from "./Summary.vue";
 import InvoiceContact from "./InvoiceContact.vue";
-import { reactive, provide } from "vue";
+import { reactive, provide, watch } from "vue";
 const state = reactive({
   contactInfo: {
     contact_name: null,
@@ -48,8 +48,33 @@ const deleteInvoiceItem = (invoiceItem) => {
   state.items = state.items.filter((i) => i.id !== invoiceItem.id);
 };
 provide("deleteInvoiceItem", deleteInvoiceItem);
-const { onSaveInvoice } = defineProps({ onSaveInvoice: Function });
+const { onSaveInvoice, editingInvoice } = defineProps({
+  onSaveInvoice: Function,
+  editingInvoice: [Object, null],
+});
 const onSave = () => {
   onSaveInvoice({ ...state, created_at: new Date(), id: new Date().getTime() });
+  state.contactInfo = {
+    contact_name: null,
+    email: null,
+    city: null,
+    country: null,
+    zipcode: null,
+  };
+  state.items = [];
 };
+
+watch(editingInvoice, (editInvoice) => {
+  // state.contactInfo = {
+  //   contact_name: "Shamil",
+  //   email: "Shamil@mail.ru",
+  //   city: "Baku",
+  //   country: "Azerbaijan",
+  //   zipcode: 1000,
+  // };
+  state.contactInfo = {
+    ...editInvoice.current.contactInfo,
+  };
+  state.items = [...editInvoice.current.items];
+});
 </script>
