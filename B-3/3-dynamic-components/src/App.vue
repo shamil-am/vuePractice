@@ -12,9 +12,9 @@
         <button class="btn btn-danger" @click="currentPage = 'RedBg'">
           Red
         </button>
-        <button class="btn btn-success" @click="currentPage = 'GreenBg'">
+        <!-- <button class="btn btn-success" @click="currentPage = 'GreenBg'">
           Green
-        </button>
+        </button> -->
         <button class="btn btn-primary" @click="currentPage = 'BlueBg'">
           Blue
         </button>
