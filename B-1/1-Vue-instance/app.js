@@ -4,13 +4,9 @@ Vue.createApp({
       message: "Hello vue!",
       content: "Test content",
       url: {
-        pageName: "Facebook",
+        pageName: "Facebook,Twitter",
         target: "_blank",
         pageUrl: "http://facebook.com",
-      },
-      target: {
-        x: 0,
-        y: 0,
       },
     };
   },
