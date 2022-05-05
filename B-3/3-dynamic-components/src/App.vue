@@ -2,13 +2,6 @@
   <div class="container">
     <div class="row">
       <div class="col-4 offset-4 my-2">
-        <!-- <button class="btn btn-danger" @click="currentPage = 'red'">Red</button>
-        <button class="btn btn-success" @click="currentPage = 'green'">
-          Green
-        </button>
-        <button class="btn btn-primary" @click="currentPage = 'blue'">
-          Blue
-        </button> -->
         <button class="btn btn-danger" @click="currentPage = 'RedBg'">
           Red
         </button>
@@ -21,11 +14,6 @@
       </div>
     </div>
     <div class="row">
-      <!-- <div class="col-6 offset-3">
-        <RedBg v-if="currentPage === 'red'" />
-        <GreenBg v-else-if="currentPage === 'green'" />
-        <BlueBg v-else />
-      </div> -->
       <div class="col-6 offset-3">
         <keep-alive>
           <component :is="currentPage" msg="from component" />
