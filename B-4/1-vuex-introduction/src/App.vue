@@ -10,7 +10,8 @@
       {{ item.title }} - {{ item.type }}
     </p>
     <!--!reactiv add etme -->
-    <button @click="addProduct">add iphone 13</button>
+ 
+    <button @click="addProduct">add Iphone 12</button>
     <p class="text-danger" v-for="item in _electronicItems" :key="item.id">
       {{ item.title }} - {{ item.type }}
     </p>
